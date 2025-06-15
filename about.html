@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sowmya S | About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #213448;
+      color: #ECEFCA;
+    }
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      background-color: #011730;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    header h1 span {
+      color: #FFD60A;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: #FFD60A;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #FFC300;
+    }
+
+    .about-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .download-btn {
+    background-color: #020202;
+    color: #01060c;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    border: none;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #FFD60A;
+    }
+
+    .experience-counter {
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFD60A;
+      font-weight: 600;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-text a {
+      color: #FFD60A;
+      text-decoration: underline;
+    }
+
+    .about-text a:hover {
+      color: #FFC300;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sowmya S | About</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>About Me</h2>
+    
+    <div class="experience-counter" id="experience-counter">
+      <!-- Experience days counter will be injected here -->
+    </div>
+
+   <div class="about-text">
+  <p>
+    Hello! I'm <strong>Sowmya S</strong>, an Embedded Engineer passionate about developing 
+    safe and sustainable embedded software solutions that bridge hardware and software 
+    in modern vehicles. I hold a degree in <strong>Electronics and Communication Engineering (ECE)</strong> 
+    and specialize in building secure software for <strong>braking and steering systems</strong>. 
+    My technical expertise includes programming in <strong>Embedded C</strong>, working with 
+    <strong>AUTOSAR architecture</strong>, and adhering to <strong>ISO 26262</strong> safety standards.
+  </p>
+
+  <p>
+    I have hands-on experience with the <strong>TASKING Compiler</strong>, <strong>Inspector Tool</strong>, 
+    and other industry-standard IDEs. I’ve contributed to projects aligned with 
+    <strong>ISO 26262 Part 8</strong>, specifically clauses 11 and 12. Additionally, I’ve performed 
+    <strong>stack analysis</strong> for critical automotive applications using the 
+    <strong>AbsInt Tool</strong>, ensuring compliance and robustness in safety-critical systems.
+  </p>
+
+  <p>
+    Currently, I work as an <strong>Associate Embedded Engineer at ZF Technologies</strong> 
+    in collaboration with <strong>Neotech Global</strong>. My focus lies in developing reliable 
+    software for <strong>IBC and EPB projects</strong> involving both <strong>AI and embedded systems</strong>. 
+    I’m actively involved in <strong>test automation</strong>, utilizing platforms like 
+    <strong>Azure DevOps</strong> and <strong>Jenkins</strong>, and performing embedded development 
+    on <strong>Tricore Microcontrollers</strong>. I enjoy solving rare edge-case issues, 
+    conducting system-level test analysis, and contributing to innovations in vehicle safety.
+  </p>
+</div>
+        <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://drive.google.com/file/d/13Re571SQF2rKyHce-2BKzJ4edZlDJJNy/view" download class="download-btn">
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+</div>
+</div>
+
+    </div>
+  </section>
+
+  <script>
+    // Your start date as Embedded Engineer: for example, Sept 1, 2023
+    const startDate = new Date('2023-10-11T00:00:00');
+
+    function calculateExperience() {
+      const now = new Date();
+      let diff = now - startDate; // milliseconds
+
+      if (diff < 0) {
+        document.getElementById('experience-counter').textContent = "Experience start date is in the future.";
+        return;
+      }
+
+      // Calculate total days
+      const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      // Calculate years, months, days
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      let days = now.getDate() - startDate.getDate();
+
+      if (days < 0) {
+        months--;
+        days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      // Format string
+      let expString = `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer`;
+
+      document.getElementById('experience-counter').textContent = expString;
+    }
+
+    calculateExperience();
+  </script>
+</body>
+</html>
